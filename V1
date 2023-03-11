@@ -1,0 +1,69 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("POIK HUB", "BloodTheme")
+local Tab = Window:NewTab("MAIN")
+local Section = Tab:NewSection("Auto Farm")
+Section:NewToggle("Auto Skill TSRuber", "Click to use auto skill fruit", function(state)
+    _G.ASTS = state
+    while _G.ASTS do wait()
+    if state then
+        local args = {
+    [1] = "TSRubber",
+    [2] = "JetPistol",
+    [3] = {}
+}
+
+game:GetService("ReplicatedStorage").ReplicatorNoYield:FireServer(unpack(args))
+        local args = {
+    [1] = "TSRubber",
+    [2] = "JetGatling",
+    [3] = {
+        ["MouseRay"] = {
+            ["Normal"] = nil --[[Vector3]],
+            ["Direction"] = nil --[[Vector3]],
+            ["Origin"] = nil --[[Vector3]],
+            ["Instance"] = workspace.Terrain.PalmTreePot.Leaves,
+            ["Distance"] = 47.99876022338867,
+            ["Position"] = nil --[[Vector3]],
+            ["Material"] = Enum.Material.Grass
+        }
+    }
+}
+
+game:GetService("ReplicatedStorage").ReplicatorNoYield:FireServer(unpack(args))
+        local args = {
+    [1] = "TSRubber",
+    [2] = "RedHawk",
+    [3] = {}
+}
+
+game:GetService("ReplicatedStorage").ReplicatorNoYield:FireServer(unpack(args))
+        local args = {
+    [1] = "TSRubber",
+    [2] = "GrizzlyMagnum",
+    [3] = {
+        ["MouseRay"] = {
+            ["Normal"] = nil --[[Vector3]],
+            ["Direction"] = nil --[[Vector3]],
+            ["Origin"] = nil --[[Vector3]],
+            ["Position"] = nil --[[Vector3]]
+        }
+    }
+}
+
+game:GetService("ReplicatedStorage").ReplicatorNoYield:FireServer(unpack(args))
+
+
+        end
+    end
+end)
+Section:NewToggle("Loop Safe Place", "Click to use", function(state)
+    _G.ATSP = state
+    while _G.ATSP do wait()
+        game.Players.localPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2425.86768, 712.999817, 885.388794, 0.999583721, -2.21873053e-09, -0.0288508553, 1.35459153e-11, 1, -7.64341408e-08, 0.0288508553, 7.64019319e-08, 0.999583721)
+    end
+end)
+local Tab = Window:NewTab("Setting")
+local Section = Tab:NewSection("Setting")
+Section:NewKeybind("close UI", "Click to close UI", Enum.KeyCode.RightControl, function()
+	Library:ToggleUI()
+end)
